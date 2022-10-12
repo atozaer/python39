@@ -108,3 +108,67 @@
 # 아.  53 % 21 < 45 / 18
 # 자.  (4 < 6) || true && false || false && (2 > 3)
 # 차.  7 - (3 + 8 * 6 + 3) - (2 + 5 * 2)
+
+
+# 12. 생년월일을 이용해서 나이를 계산하는 프로그램을 작성하여라. (MyAge)
+# K나이 - 세는나이(출생시 1살, 해가 바뀌면 + 1)
+#        만나이(출생시 0살, 생일이 지나면 + 1)
+#        연나이(현재연도 - 출생연도)
+
+# curDate = 2022
+# birthDate = 1993
+# isPassBirth = True
+# myAge = curDate - birthDate
+#
+# print('연나이',myAge)
+# print('세는나이', 1 + myAge)
+#
+# 파이썬 if 단축식 : 참일때 값 if 조건식, 거짓일 때 else 조건식
+# print('만나이', (myAge+1) if isPassBirth else myAge)
+
+# 13. 구구단 중 7단을 출력하는 프로그램을 작성하여라. (GuGu7Dan)
+# print('7 x 1 = ', (7 * 1))
+# print('7 x 2 = ', (7 * 2))
+# print('7 x 3 = ', (7 * 3))
+# print('7 x 4 = ', (7 * 4))
+# print('7 x 5 = ', (7 * 5))
+# print('7 x 6 = ', (7 * 6))
+# print('7 x 7 = ', (7 * 7))
+# print('7 x 8 = ', (7 * 8))
+# print('7 x 9 = ', (7 * 9))
+
+dan = 7
+# .format
+print("""
+{0:d} x 1 = {0:d}
+{0:d} x 2 = {1:d}
+{0:d} x 3 = {2:d}
+{0:d} x 4 = {3:d}
+{0:d} x 5 = {4:d}
+{0:d} x 6 = {5:d}
+{0:d} x 7 = {6:d}
+{0:d} x 8 = {7:d}
+{0:d} x 9 = {8:d}
+""".format(dan*1,dan*2,dan*3,dan*4,dan*5,dan*6,dan*7,dan*8,dan*9))
+
+# f-string
+print(f"""
+{dan:d} x 1 = {dan*1:d}
+{dan:d} x 2 = {dan*2:d}
+{dan:d} x 3 = {dan*3:d}
+{dan:d} x 4 = {dan*4:d}
+{dan:d} x 5 = {dan*5:d}
+{dan:d} x 6 = {dan*6:d}
+{dan:d} x 7 = {dan*7:d}
+{dan:d} x 8 = {dan*8:d}
+{dan:d} x 9 = {dan*9:d}
+""")
+
+
+
+# 14. 다음 조건을 만족하는 프로그램을 작성하여라 (TimeTime)
+# 하루는 86400초이다. 입력값이 1234567890일 경우 며칠인지 계산하여라
+# 한 시간은 3600초이다. 입력값이 98765일 경우 몇 시간인지 계산하여라
+# 일 분은 60초이다. 입력값이 12345일 경우 몇 분인지 계산하여라.
+
+
