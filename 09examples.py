@@ -40,22 +40,22 @@ import random
 # 가. 미혼인 경우 : 연봉 3000미만 - 10%,  연봉 3000이상 - 25%
 # 나. 결혼한 경우 : 연봉 6000미만 - 15%,  연봉 6000이상 - 35%
 
-# salary = int(input('연봉을 입력하세요 : '))
-# isMarreid = False
-# merriedCheck = input('결혼 여부를 입력해주세요 y/n')
-# if merriedCheck == 'y':
-#     isMarreid = True
-#
-# if isMarreid:
-#     if salary < 6000:
-#         print(f'세율 : 15%, 납부액:{int(salary*0.15):d}원')
-#     if salary >= 6000:
-#         print(f'세율 : 35%, 납부액:{int(salary*0.35):d}원')
-# else:
-#     if salary < 3000:
-#         print(f'세율 : 10%, 납부액:{int(salary*0.1):d}원')
-#     if salary >= 3000:
-#         print(f'세율 : 25%, 납부액:{int(salary*0.25):d}원')
+salary = int(input('연봉을 입력하세요 : '))
+isMarreid = False
+merriedCheck = input('결혼 여부를 입력해주세요 y/n')
+if merriedCheck == 'y':
+    isMarreid = True
+
+if isMarreid:
+    if salary < 6000:
+        print(f'세율 : 15%, 납부액:{int(salary*0.15):d}원')
+    elif salary >= 6000:
+        print(f'세율 : 35%, 납부액:{int(salary*0.35):d}원')
+else:
+    if salary < 3000:
+        print(f'세율 : 10%, 납부액:{int(salary*0.1):d}원')
+    elif salary >= 3000:
+        print(f'세율 : 25%, 납부액:{int(salary*0.25):d}원')
 
 # 27. 다음 조건을 이용해서 현재 연도를 입력하면 윤년 여부를
 # 출력하는 프로그램을 작성하세요. (LeapYear)
