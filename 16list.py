@@ -3,6 +3,7 @@
 # 효율적으로 저장,조회,수정,삭제하기 위해
 # 요구되는 기능과 기법을 의미
 # 대표적인 자료구조 : 리스트, 튜플, 셋, 딕셔너리
+import random
 
 # 리스트list
 # 다른 프로그래밍 언어에서는 배열array과 유사
@@ -66,5 +67,35 @@
 # 단, 3명의 학생에 대해 성적처리를 진행함
 # 성적자료 초기화
 
+# 2차원 리스트 출력하기 1 : for ~ in range
+
+score = [
+    [33,44,55,66,77,88,99],
+    [11,22,33,44,55],
+    [99,88,77],
+]
+for i in range(len(score)):
+    print(score[i])
+
+# 2차원 리스트 출력하기 2 : for a in A
+for sc in score:
+    print(sc)
+
+# 2차원 리스트 출력하기 3 : 중첩 for ~ in , 개별 출력시
+for sc in score:
+    for s in sc:
+        print(s, end=' ')
+    print()
 
 
+lsts = []
+size1 = int(input('리스트의 크기는?'))
+
+for i in range(size1):
+    lst = []
+    size2 = random.randint(1, 10)
+    for j in range(size2):
+        val = random.randint(50, 100)
+        lst.append(val)
+    lsts.append(lst)
+print(lsts)
