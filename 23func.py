@@ -141,65 +141,64 @@
 # 33 - 신용카드 판별하는 프로그램을 함수로 작성
 # 함수명 checkCredit(코드)
 # dict 자료구조를 이용해서 작성
-card_info = {
-    35: {
-        'name': 'JCB카드',
-        'company_info': {
-            '6317': 'NH농협카드',
-            '6901': '신한카드',
-            '6912': 'KB국민카드',
-        },
-    },
-    4: {
-        'name': '비자카드',
-        'company_info': {
-            '04825': '비씨카드',
-            '38676': '신한카드',
-            '57973': '국민은행',
-        },
-    },
-    5: {
-        'name': '마스타카드',
-        'company_info': {
-            '15594': '신한카드',
-            '24353': '외환카드',
-            '40926': '국민은행',
-        },
-    },
-}
-
-
-def checkCredit(code):
-    if card_info.get(int(code[:2])):
-        print(card_info[int(code[:2])]['name'])
-        if card_info[int(code[:2])]['company_info'].get(code[2:]):
-            print(card_info[int(code[:2])]['company_info'][code[2:]])
-        else:
-            print('존재하지 않는 카드사 입니다.')
-    elif card_info.get(int(code[0])):
-        print(card_info[int(code[0])]['name'])
-        if card_info[int(code[0])]['company_info'].get(code[1:]):
-            print(card_info[int(code[0])]['company_info'][code[1:]])
-        else:
-            print('존재하지 않는 카드사 입니다.')
-    else:
-        print('존재하지 않는 카드 종류 입니다.')
-
-
-checkCredit('404825')
+# card_info = {
+#     35: {
+#         'name': 'JCB카드',
+#         'company_info': {
+#             '6317': 'NH농협카드',
+#             '6901': '신한카드',
+#             '6912': 'KB국민카드',
+#         },
+#     },
+#     4: {
+#         'name': '비자카드',
+#         'company_info': {
+#             '04825': '비씨카드',
+#             '38676': '신한카드',
+#             '57973': '국민은행',
+#         },
+#     },
+#     5: {
+#         'name': '마스타카드',
+#         'company_info': {
+#             '15594': '신한카드',
+#             '24353': '외환카드',
+#             '40926': '국민은행',
+#         },
+#     },
+# }
+#
+#
+# def checkCredit(code):
+#     if card_info.get(int(code[:2])):
+#         print(card_info[int(code[:2])]['name'])
+#         if card_info[int(code[:2])]['company_info'].get(code[2:]):
+#             print(card_info[int(code[:2])]['company_info'][code[2:]])
+#         else:
+#             print('존재하지 않는 카드사 입니다.')
+#     elif card_info.get(int(code[0])):
+#         print(card_info[int(code[0])]['name'])
+#         if card_info[int(code[0])]['company_info'].get(code[1:]):
+#             print(card_info[int(code[0])]['company_info'][code[1:]])
+#         else:
+#             print('존재하지 않는 카드사 입니다.')
+#     else:
+#         print('존재하지 않는 카드 종류 입니다.')
+#
+#
+# checkCredit('404825')
 
 
 # ex) 60갑자를 출력해주는 프로그램을 함수로 작성
 # 함수명 : checkChinaZodiac(년도)
 
-# def checkChinaZodiac(year):
-#     ganji = ('경', '신', '임', '계', '갑', '을', '병', '정', '무', '기')
-#     sip2ji = ('신', '유', '술', '해', '자', '축', '인', '묘', '진', '사', '오', '미')
-#
-#     year = int(input('연도를 입력하세요 : '))
-#     curgan = year % 10
-#     cursip = year % 12
-#     print(f'{ganji[curgan]}{sip2ji[cursip]}년 입니다.')
-#
-#
-# checkChinaZodiac(2022)
+def checkChinaZodiac(year):
+    ganji = ('경', '신', '임', '계', '갑', '을', '병', '정', '무', '기')
+    sip2ji = ('신', '유', '술', '해', '자', '축', '인', '묘', '진', '사', '오', '미')
+
+    curgan = year % 10
+    cursip = year % 12
+    print(f'{ganji[curgan]}{sip2ji[cursip]}년 입니다.')
+
+year = int(input('연도를 입력하세요 : '))
+checkChinaZodiac(year)
