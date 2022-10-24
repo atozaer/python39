@@ -1,10 +1,32 @@
 # 성적 데이터 저장할 변수 선언
+import json
+
 sjs = []
 
-# 함수 정의부
+# sungjuk.dat 파일을 읽어서 sjs 변수에 초기화
+def loadSungJuk():
+    global sjs
+    # 파일에 저장된 성적데이터들을 모두 읽어 리스트에 저장
+    try:
+        with open('data/sungjukv6b.dat', encoding='UTF-8') as f:
+            data = f.read()
+            sjs = json.loads(data)
+    except:
+        pass
+
+# 성적데이터들을 sungjuk.dat 파일에 저장
+# [ {'name': 혜교, 'kor': 77, 'eng': 33, 'mat': 86},
+#   {'name': 지현, 'kor': 66, 'eng': 44, 'mat': 54},
+#   {'name': 수지, 'kor': 55, 'eng': 55, 'mat': 43} ]
+def saveSungJuk(sjs):
+    with open('data/sungjukv6b.dat', 'w', encoding='UTF-8') as f:
+        # 방금 입력한 성적데이터와
+        # 기존에 입력한 모든 성적데이터를 JSON 형식으로 파일에 함께 저장
+        f.write(json.dumps(sjs, ensure_ascii=False))
+
 def displayMenu():
     main_menu = f'''
-    성적 처리프로그램 v4d
+    성적 처리프로그램 v6
     -----------------
     1. 성적 데이터 추가
     2. 성적 데이터 조회
@@ -14,8 +36,9 @@ def displayMenu():
     0. 프로그램 종료
     -----------------'''
     print(main_menu)
+    # menu = input("메뉴를 선택하세요 => ")
+    # return menu
 
-    return str()
 def inputSungJuk():
     name = input('이름은?')
     kor = int(input('국어 점수는?'))
@@ -38,6 +61,10 @@ def addSungJuk():
     sj['grd'] = grd
 
     sjs.append(sj)
+
+    # sjs 에 저장된 성적데이터를 파일에 저장
+    saveSungJuk(sjs)
+
     print('성적데이터 추가 완료!')
 
 def readSungJuk():
@@ -96,18 +123,26 @@ def modifySungJuk():
 
     # 기존 위치에 다시 저장
     sjs[idx] = sj
+
+    # 수정된 성적데이터를 파일에 저장
+    saveSungJuk(sjs)
+
     print('성적 데이터 수정')
 
 def removeSungJuk():
     name = input('삭제할 데이터의 학생 이름은?')
 
     idx = None
-    for i in range(len(sjs)):
+    for i in range(len(sjs)-1):
         item = sjs[i]
         if item['name'] == name:
             idx = i
 
     sjs.pop(idx)
+
+    # 삭제된 성적데이터를 파일에 반영
+    saveSungJuk(sjs)
+
     print('성적 데이터 삭제')
 
 def computeSungJuk(sj):
